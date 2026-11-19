@@ -5,7 +5,6 @@ import com.misdaque.productcatalogservice.dtos.FakeStoreProductDto;
 import com.misdaque.productcatalogservice.models.Category;
 import com.misdaque.productcatalogservice.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.restclient.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,9 +12,6 @@ import java.util.List;
 
 @Service
 public class ProductService implements IProductService {
-
-    @Autowired
-    private RestTemplateBuilder restTemplateBuilder;
 
     @Autowired
     private IFakeProductApiClient fakeProductApiClient;
