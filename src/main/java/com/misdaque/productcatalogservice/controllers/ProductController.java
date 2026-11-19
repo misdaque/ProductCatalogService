@@ -52,14 +52,18 @@ public class ProductController {
 
             return new ResponseEntity<>(from(product), HttpStatus.OK);
         } catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            throw new RuntimeException(e);
         }
     }
 
     @PostMapping("/products")
-    public ProductDto createProduct(@RequestBody ProductDto productDto){
+    public ResponseEntity<ProductDto> createProduct(@RequestBody ProductDto productDto){
 
-        return null;
+        Product product = from(productDto);
+
+        productService.createproduct(product);
+
+        return new  ResponseEntity<>(from(product), HttpStatus.CREATED);
     }
 
     @PutMapping("/products/{id}")
