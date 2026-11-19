@@ -14,4 +14,8 @@ public class Product extends BaseModel{
     private Double amount;
 
     private Category category;
+
+    private String imageUrl;
+
+    private Boolean isPrimeSpecific;
 }
