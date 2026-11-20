@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 public class CategoryDto {
 
-    private long id;
+    private Long id;
 
     private String name;
 

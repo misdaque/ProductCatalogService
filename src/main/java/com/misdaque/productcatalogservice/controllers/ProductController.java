@@ -108,11 +108,11 @@ public class ProductController {
         product.setTitle(productDto.getTitle());
         product.setImageUrl(productDto.getImageUrl());
         if(productDto.getCategory() != null){
-            CategoryDto categoryDto = new CategoryDto();
-            categoryDto.setId(productDto.getCategory().getId());
-            categoryDto.setName(productDto.getCategory().getName());
-            categoryDto.setDescription(productDto.getCategory().getDescription());
-            productDto.setCategory(categoryDto);
+            Category category = new Category();
+            category.setId(productDto.getCategory().getId());
+            category.setName(productDto.getCategory().getName());
+            category.setDescription(productDto.getCategory().getDescription());
+            product.setCategory(category);
         }
 
         return product;
